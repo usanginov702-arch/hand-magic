@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAND MAGIC</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Библиотека распознавания рук -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js"></script>
+
+    <!-- Наш JavaScript -->
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <main id="scene">
+
+        <!-- Основное поле частиц -->
+        <canvas id="particleCanvas"></canvas>
+
+        <!-- Верхняя панель -->
+        <header class="topbar">
+            <div class="brand">HAND <span>MAGIC</span></div>
+            <div id="status">ЗАГРУЗКА...</div>
+        </header>
+
+        <!-- Информация о жесте -->
+        <section class="center-info">
+            <div class="small-title">GESTURE CONTROL</div>
+            <h1 id="gestureLabel">ОЖИДАНИЕ</h1>
+            <p>Покажи жест перед камерой</p>
+        </section>
+
+        <!-- Управление -->
+        <div class="controls">
+            <button id="cameraButton">Показать камеру</button>
+            <button id="fullscreenButton">Полный экран</button>
+        </div>
+
+        <!-- Камера -->
+        <div id="cameraPanel" class="camera-panel hidden">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="cameraCanvas"></canvas>
+        </div>
+
+        <div class="bottom-info">
+            HAND MAGIC • PARTICLE EXPERIENCE
+        </div>
+
+    </main>
+
+</body>
+</html>
